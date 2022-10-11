@@ -1,12 +1,11 @@
 let start = document.querySelector(".start");
-let pause = document.querySelector(".pause");
 let reset = document.querySelector(".reset");
 
 
 let seconds=0;
 let minutes=0;
 let hours=0;
-
+//
 let displaySeconds="";
 let displayMinutes="";
 let displayHours="";
@@ -14,9 +13,11 @@ let displayHours="";
 let watch= "stopped"
 
 start.addEventListener("click",()=>{
+    
+    start.innerText = "Pause"
 
     watch ="start"
-
+ 
     seconds++;
    
     //if one minutes passed then set seconds to 0 and increment minute to 1
@@ -39,7 +40,7 @@ start.addEventListener("click",()=>{
     }
     else if(seconds>=10)
     {
-        displaySeconds =  seconds.toString();
+        displaySeconds =  seconds;
     }
 
     //if minutes variable is less then 0 then
@@ -49,7 +50,7 @@ start.addEventListener("click",()=>{
     }
     else if(minutes>=10)
     {
-        displayMinutes =  minutes.toString();
+        displayMinutes =  minutes;
     }
 
     //if minutes variable is less then 0 then
@@ -59,10 +60,10 @@ start.addEventListener("click",()=>{
     }
     else if(hours>=10)
     {
-        displayHours =  hours.toString();
+        displayHours =  hours;
     }
 
-   document.querySelector("#display").innerHTML = hours + ":" +minutes +":"+ seconds;
+   document.querySelector("#display").innerHTML = displayHours + ":" +displayMinutes +":"+ displaySeconds;
 
 })
 
