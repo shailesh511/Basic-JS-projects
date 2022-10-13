@@ -11,10 +11,16 @@ let displayMinutes="";
 let displayHours="";
 
 let count= 0;
+let variable =null;
 
 start.addEventListener("click",()=>{
     count++;
-        window.setInterval(()=>{
+
+    if(variable!==null)
+    {
+        clearInterval(variable);
+    }
+   variable = window.setInterval(()=>{
             if(count % 2 !== 0)
             {
                 start.innerText = "Pause"
@@ -86,6 +92,7 @@ reset.addEventListener("click",()=>{
         minutes=0;
         hours=0;
     document.querySelector("#display").innerHTML = "00:00:00";
+    clearInterval(variable);
 })
 
 
